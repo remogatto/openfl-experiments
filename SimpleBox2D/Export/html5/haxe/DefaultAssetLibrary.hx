@@ -45,11 +45,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/grass.png", __ASSET__assets_grass_png);
+		type.set ("assets/grass.png", AssetType.IMAGE);
+		className.set ("assets/crate.png", __ASSET__assets_crate_png);
+		type.set ("assets/crate.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/grass.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/crate.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		
 		
 		var assetsPrefix = ApplicationMain.config.assetsPrefix;
@@ -64,11 +76,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if openfl
 		
 		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/grass.png", __ASSET__assets_grass_png);
+		type.set ("assets/grass.png", AssetType.IMAGE);
+		
+		className.set ("assets/crate.png", __ASSET__assets_crate_png);
+		type.set ("assets/crate.png", AssetType.IMAGE);
 		
 		
 		if (useManifest) {
@@ -670,9 +690,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_grass_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_crate_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 
 
 #elseif html5
+
+
 
 
 
@@ -683,6 +707,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
+@:image("Assets/grass.png") #if display private #end class __ASSET__assets_grass_png extends lime.graphics.Image {}
+@:image("Assets/crate.png") #if display private #end class __ASSET__assets_crate_png extends lime.graphics.Image {}
 
 
 

@@ -34,6 +34,14 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/grass.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/crate.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		
 		if (config.assetsPrefix != null) {
 			
@@ -100,7 +108,7 @@ class ApplicationMain {
 			company: "OpenFL",
 			depthBuffer: false,
 			file: "SimpleBox2D",
-			fps: Std.int (0),
+			fps: Std.int (60),
 			fullscreen: false,
 			hardware: true,
 			height: Std.int (0),
